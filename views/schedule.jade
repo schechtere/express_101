@@ -1,0 +1,9 @@
+| Welcome  #{name}
+br
+|     Your email address is:
+hr
+iframe#scheduler(src='http://localhost:3000' width='100%' height='80%' onload='onFrameLoad(this)')
+script.
+  function onFrameLoad() {
+  document.getElementById('scheduler').contentWindow.postMessage(#{name}, 'http://localhost:3000')
+  };
